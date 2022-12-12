@@ -1,0 +1,46 @@
+@import "src/assets/styles/variable";
+@import "src/assets/styles/layout";
+
+.inner-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 200px;
+}
+
+.button-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 10;
+
+  button:nth-child(2){
+    margin-left: 20px;
+  }
+}
+
+.carousel {
+  display: flex;
+  transition: transform 2s;
+  margin-top: 100px;
+
+  .box{
+    padding-left: 10px;
+  }
+
+ @include breakpoint(tabletOnly) {
+   .box {
+     animation-duration: 2000ms;
+     flex-shrink: 0;
+   }
+ }
+
+  @include breakpoint(mobileOnly) {
+    .box {
+      animation-duration: 2000ms;
+      flex-shrink: 0;
+    }
+  }
+}

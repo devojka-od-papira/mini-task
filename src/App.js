@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Galery from "./components/galery";
+import "./App.scss"
+import Carousel from "./components/carousel";
+import {Grid, useBreakpoint} from "light-react-grid";
+import photography from "./assets/images/photography.jpeg";
+import david from "./assets/images/david.jpeg";
+import linocut from "./assets/images/linocut.jpeg";
+import drawingpainting from "./assets/images/drawing&painting.jpeg";
 
-function App() {
+const data = [
+  {
+    src: photography,
+    alt: 'photography',
+    headline: 'Photography',
+    subheadline: 'Photography',
+    link: 'https://en.wikipedia.org/wiki/Photography',
+    isLarge: true,
+  },
+  {
+    src: david,
+    alt: 'david',
+    headline: 'David',
+    subheadline: 'David',
+    link: 'https://en.wikipedia.org/wiki/David',
+    isLarge: true,
+  },
+  {
+    src: linocut,
+    alt: 'linocut',
+    headline: 'Linocut',
+    subheadline: 'Linocut',
+    link: 'https://en.wikipedia.org/wiki/Linocut',
+    isLarge: true,
+  },
+  {
+    src: drawingpainting,
+    alt: 'drawing',
+    headline: 'Drawing',
+    subheadline: 'Drawing',
+    link: 'https://en.wikipedia.org/wiki/Rome',
+    isLarge: true,
+  },
+  {
+    src: photography,
+    alt: 'photography',
+    headline: 'Photography',
+    subheadline: 'Photography',
+    link: 'https://en.wikipedia.org/wiki/Photography',
+    isLarge: true,
+  },
+  {
+    src: david,
+    alt: 'david',
+    headline: 'David',
+    subheadline: 'David',
+    link: 'https://en.wikipedia.org/wiki/David',
+    isLarge: true,
+  },
+];
+
+const App =()=> {
+  const breakpoint = useBreakpoint();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Grid>
+        {breakpoint === 'lg' ? <Galery data={data} /> : <Carousel data={data} />}
+      </Grid>
   );
 }
 

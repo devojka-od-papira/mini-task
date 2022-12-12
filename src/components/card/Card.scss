@@ -1,0 +1,83 @@
+@import "src/assets/styles/typography";
+@import "src/assets/styles/layout";
+
+.card {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @include breakpoint(tabletOnly) {
+    width: 100%;
+    height: 450px;
+  }
+
+  @include breakpoint(mobileOnly) {
+    width: 100%;
+    height: 450px;
+  }
+}
+
+.largeImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.smallImg {
+  box-sizing: border-box;
+  padding: 25px 25px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.card {
+  div {
+    h2 {
+      font-size: 26px;
+      margin: 15px 0;
+      text-transform: uppercase;
+      font-family: noto;
+      font-weight: 700;
+    }
+  }
+}
+
+.card {
+  div {
+     h3 {
+        font-size: 20px;
+        margin: 15px 0;
+        font-family: noto;
+        font-weight: 400;
+     }
+  }
+}
+
+  @include breakpoint(tabletOnly){
+    div {
+      h2 {
+        font-size: 14px;
+      }
+
+      h3 {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @include breakpoint(mobileOnly) {
+    div {
+      h2 {
+        font-size: 10px;
+      }
+
+      h3 {
+        font-size: 9px;
+      }
+    }
+  }

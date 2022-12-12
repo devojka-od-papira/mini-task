@@ -1,0 +1,7 @@
+@import 'src/assets/styles/layout';
+
+.container {
+  @include container;
+  flex-direction: column;
+  overflow: hidden;
+}
